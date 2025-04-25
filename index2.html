@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            background-color: rgb(13, 13, 141);
+            color:#fff;
+        }
+        label.name{
+            color: #0e0d0d;
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        label, input {
+            display: block;
+            width: 100%;
+        }
+        input {
+            padding: 8.5px;
+            box-sizing: border-box;
+        }
+        input:hover{
+            background-color: rgb(239, 255, 244);
+            color: #181717;
+        }
+        .error {
+            color: rgb(255, 0, 0);
+            margin-bottom: 10px;
+        }
+        button {
+            margin: 5px 3px; 
+            align-items: center;
+            color: blue;
+            box-sizing: border-box;
+            padding: 5px ;
+            width: 100%;
+        }
+        button:hover{
+            background-color: rgb(61, 61, 73);
+            color: #fff;
+        }
+        h2{
+            align-items: center;
+            padding: 0;
+            justify-content: center;
+            color: rgba(252, 28, 28, 0.89);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Registration</h2>
+        <form action="https://formspree.io/f/xnndqkzj" method="POST" id="form">
+            <div id="error" class="error"></div>
+    
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter User Name" required>
+            </div>
+    
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+            </div>
+    
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            </div>
+    
+            <div class="form-control">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+            </div>
+    
+            <button type="submit">Register</button>
+        
+    </div>
+    
+
+            <button type="submit"><a href="https://www.instagram.com/accounts/login/?hl=en">Login</a></button>
+            
+
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('form');
+        const errorDiv = document.getElementById('error');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!name || !email || !password) {
+                errorDiv.textContent = 'Please fill out all fields.';
+            } else {
+                errorDiv.textContent = '';
+                
+                alert('Your account has been created!');
+            }
+        });
+    </script>
+
+</body>
+</html>

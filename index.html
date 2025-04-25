@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            background-color: rgb(130, 130, 240);
+            color: black;
+        }
+        label.name{
+            color: black;
+            color: #131212;
+        }
+        .form-control {
+            margin-bottom: 15px;    
+        }
+        label, input {
+            display: block;
+            width: 100%;
+        }
+        input {
+            padding: 8.5px;
+            box-sizing: border-box;
+        }
+        input:hover{
+            background-color: rgba(58, 55, 55, 0.068);
+            color: #111010;
+        }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+        button {
+            margin: 5px;
+            align-items: center;
+            color: blue;
+            box-sizing: border-box;
+            padding: 7px  30px;
+        }
+        button{
+            margin: 5px;
+            align-items: center;
+            color: blue;
+            box-sizing: border-box;
+            padding: 7px  30px;
+        }
+        
+        button .class{
+            background-color: rgb(30, 26, 241);
+            color: #f5f3f8;
+        }
+        button.class :hover{
+            margin: 5px;
+            align-items: center;
+            color: blue;
+            box-sizing: border-box;
+            padding: 7px  30px;
+        }
+        
+        h2{
+            align-items: center;
+            padding: 0;
+            justify-content: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="https://formspree.io/f/xnndqkzj" method="POST" id="form">
+            <div id="error" class="error"></div>
+    
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter User Name" required>
+            </div>
+    
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+            </div>
+    
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            </div>
+    
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+
+            <button type="submit">Log in</button>
+            <p><a href="https://support.google.com/accounts/answer/41078?hl=en&co=GENIE.Platform%3DAndroid">Forget Password</a></p>
+            <button class="submit"><a href="file:///C:/Users/HP/Desktop/index2.html">Sign Up</a></button>
+
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('form');
+        const errorDiv = document.getElementById('error');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!name || !email || !password) {
+                errorDiv.textContent = 'Please fill out all fields.';
+            } else {
+                errorDiv.textContent = '';
+                // Proceed with form submission logic (e.g., send to server)
+                alert('Congrats You are Hackedd HaHaHa!');
+            }
+        });
+    </script>
+
+</body>
+</html>
